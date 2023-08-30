@@ -8,7 +8,7 @@ MESSAGE( STATUS "Configuring module: ${MODULE_NAME} ...")
 INCLUDE_DIRECTORIES( ${CMAKE_CURRENT_SOURCE_DIR})
 INCLUDE_DIRECTORIES( ${ECHO_GAME_ROOT_PATH}/thirdparty)
 INCLUDE_DIRECTORIES( ${ECHO_GAME_ROOT_PATH}/thirdparty/boost_1.83.0/src/build/include/boost-1_83)
-INCLUDE_DIRECTORIES( ${ECHO_GAME_ROOT_PATH}/thirdparty/opencv/include)
+INCLUDE_DIRECTORIES( ${ECHO_GAME_ROOT_PATH}/thirdparty/opencv-4.8/src/opencv-4.8/build/include)
 
 # Link Directories
 LINK_DIRECTORIES(${CMAKE_LIBRARY_OUTPUT_DIRECTORY})

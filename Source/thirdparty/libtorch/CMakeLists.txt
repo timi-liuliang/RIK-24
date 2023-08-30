@@ -11,7 +11,7 @@
 # LibTorch
 INCLUDE(ExternalProject)
 ExternalProject_Add(
-    libTorch-2.0.1-release
+    libtorch-2.0.1-release
     URL https://download.pytorch.org/libtorch/cu118/libtorch-win-shared-with-deps-2.0.1%2Bcu118.zip
     PREFIX ${CMAKE_CURRENT_SOURCE_DIR}
     BUILD_IN_SOURCE true
@@ -20,10 +20,10 @@ ExternalProject_Add(
     INSTALL_COMMAND ""
 )
 
-SET_TARGET_PROPERTIES(libTorch-2.0.1-release PROPERTIES FOLDER "game/thirdparty/external/libtorch")
+SET_TARGET_PROPERTIES(libtorch-2.0.1-release PROPERTIES FOLDER "game/thirdparty/external/libtorch")
 
 ExternalProject_Add(
-    libTorch-2.0.1-debug
+    libtorch-2.0.1-debug
     URL https://download.pytorch.org/libtorch/cu118/libtorch-win-shared-with-deps-debug-2.0.1%2Bcu118.zip
     PREFIX ${CMAKE_CURRENT_SOURCE_DIR}
     BUILD_IN_SOURCE true
@@ -32,4 +32,4 @@ ExternalProject_Add(
     INSTALL_COMMAND ""
 )
 
-SET_TARGET_PROPERTIES(libTorch-2.0.1-debug PROPERTIES FOLDER "game/thirdparty/external/libtorch")
+SET_TARGET_PROPERTIES(libtorch-2.0.1-debug PROPERTIES FOLDER "game/thirdparty/external/libtorch")
