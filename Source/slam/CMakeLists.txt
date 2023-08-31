@@ -12,7 +12,7 @@ INCLUDE_DIRECTORIES( ${CMAKE_CURRENT_SOURCE_DIR})
 INCLUDE_DIRECTORIES( ${CMAKE_CURRENT_SOURCE_DIR}/../)
 INCLUDE_DIRECTORIES( ${ECHO_GAME_ROOT_PATH}/ThirdParty/)
 INCLUDE_DIRECTORIES( ${ECHO_GAME_ROOT_PATH}/ThirdParty/Sophus)
-INCLUDE_DIRECTORIES( ${ECHO_GAME_ROOT_PATH}/ThirdParty/opencv/include)
+INCLUDE_DIRECTORIES( ${ECHO_GAME_ROOT_PATH}/thirdparty/opencv-4.8/src/opencv-4.8/build/include)
 INCLUDE_DIRECTORIES( ${ECHO_GAME_ROOT_PATH}/ThirdParty/orb-slam3/include)
 INCLUDE_DIRECTORIES( ${ECHO_GAME_ROOT_PATH}/ThirdParty/orb-slam3/include/windows)
 INCLUDE_DIRECTORIES( ${ECHO_GAME_ROOT_PATH}/thirdparty/boost_1.83.0/src/build/include/boost-1_83)
@@ -44,16 +44,16 @@ TARGET_LINK_LIBRARIES(${MODULE_NAME} orb-slam3)
 
 IF(${ECHO_PLATFORM_WINDOWS})
 	TARGET_LINK_LIBRARIES(${MODULE_NAME} 
-		debug ${CMAKE_CURRENT_SOURCE_DIR}/../ThirdParty/opencv/x64/vc16/lib/opencv_world480d.lib
-		optimized ${CMAKE_CURRENT_SOURCE_DIR}/../ThirdParty/opencv/x64/vc16/lib/opencv_world480.lib)
+		debug ${ECHO_GAME_ROOT_PATH}/thirdparty/opencv-4.8/src/opencv-4.8/build/x64/vc16/lib/opencv_world480d.lib
+		optimized ${ECHO_GAME_ROOT_PATH}/thirdparty/opencv-4.8/src/opencv-4.8/build/x64/vc16/lib/opencv_world480.lib)
 
 	TARGET_LINK_LIBRARIES(${MODULE_NAME} 
-		debug ${CMAKE_CURRENT_SOURCE_DIR}/../thirdparty/openssl-1.1.1t/lib/Win64/VS2015/Release/libssl.lib
-		optimized  ${CMAKE_CURRENT_SOURCE_DIR}/../thirdparty/openssl-1.1.1t/lib/Win64/VS2015/Release/libssl.lib)
+		debug ${ECHO_GAME_ROOT_PATH}/thirdparty//openssl-1.1.1v/src/openssl-1.1.1v/x64/lib/libssl.lib
+		optimized  ${ECHO_GAME_ROOT_PATH}/thirdparty//openssl-1.1.1v/src/openssl-1.1.1v/x64/lib/libssl.lib)
 
 	TARGET_LINK_LIBRARIES(${MODULE_NAME} 
-		debug ${CMAKE_CURRENT_SOURCE_DIR}/../thirdparty/openssl-1.1.1t/lib/Win64/VS2015/Release/libcrypto.lib
-		optimized  ${CMAKE_CURRENT_SOURCE_DIR}/../thirdparty/openssl-1.1.1t/lib/Win64/VS2015/Release/libcrypto.lib)
+		debug ${ECHO_GAME_ROOT_PATH}/thirdparty//openssl-1.1.1v/src/openssl-1.1.1v/x64/lib/libcrypto.lib
+		optimized  ${ECHO_GAME_ROOT_PATH}/thirdparty//openssl-1.1.1v/src/openssl-1.1.1v/x64/lib/libcrypto.lib)
 
 	TARGET_LINK_LIBRARIES(${MODULE_NAME} 
 		debug ${ECHO_GAME_ROOT_PATH}/thirdparty/boost_1.83.0/src/build/lib/libboost_serialization-vc143-mt-gd-x64-1_83.lib
@@ -63,13 +63,13 @@ IF(${ECHO_PLATFORM_WINDOWS})
 	ADD_CUSTOM_COMMAND(
 		TARGET ${MODULE_NAME} PRE_BUILD 
 		COMMAND ${CMAKE_COMMAND} -E copy 
-		${CMAKE_CURRENT_SOURCE_DIR}/../ThirdParty/opencv/x64/vc16/bin/opencv_world480d.dll 
+		${ECHO_GAME_ROOT_PATH}/thirdparty/opencv-4.8/src/opencv-4.8/build/x64/vc16/bin/opencv_world480d.dll 
 		${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/Debug/opencv_world480d.dll)
 
 	ADD_CUSTOM_COMMAND(
 		TARGET ${MODULE_NAME} PRE_BUILD 
 		COMMAND ${CMAKE_COMMAND} -E copy 
-		${CMAKE_CURRENT_SOURCE_DIR}/../ThirdParty/opencv/x64/vc16/bin/opencv_world480.dll 
+		${ECHO_GAME_ROOT_PATH}/thirdparty/opencv-4.8/src/opencv-4.8/build/x64/vc16/bin/opencv_world480.dll 
 		${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/Release/opencv_world480.dll)
 ENDIF()
 
