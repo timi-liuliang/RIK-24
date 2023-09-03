@@ -75,13 +75,13 @@ IF(${ECHO_PLATFORM_WINDOWS})
 	ADD_CUSTOM_COMMAND(
 		TARGET ${MODULE_NAME} PRE_BUILD 
 		COMMAND ${CMAKE_COMMAND} -E copy 
-		${ECHO_GAME_ROOT_PATH}/thirdparty/openssl-1.1.1v/x64/bin/libcrypto-1_1-x64.dll 
+		${ECHO_GAME_ROOT_PATH}/thirdparty/openssl-1.1.1v/src/openssl-1.1.1v/x64/bin/libcrypto-1_1-x64.dll 
 		${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/Debug/libcrypto-1_1-x64.dll)
 
 	ADD_CUSTOM_COMMAND(
 		TARGET ${MODULE_NAME} PRE_BUILD 
 		COMMAND ${CMAKE_COMMAND} -E copy 
-		${ECHO_GAME_ROOT_PATH}/thirdparty/openssl-1.1.1v/x64/bin/libcrypto-1_1-x64.dll 
+		${ECHO_GAME_ROOT_PATH}/thirdparty/openssl-1.1.1v/src/openssl-1.1.1v/x64/bin/libcrypto-1_1-x64.dll 
 		${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/Release/libcrypto-1_1-x64.dll)
 ENDIF()
 
