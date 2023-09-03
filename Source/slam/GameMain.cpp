@@ -4,7 +4,7 @@ namespace Echo
 {
 	void registerGameModules()
 	{
-		REGISTER_MODULE(MapModule)
+		REGISTER_MODULE(MiniSlamModule)
 		REGISTER_MODULE(OrbSlam3Module)
 	}
 }

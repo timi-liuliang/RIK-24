@@ -4,16 +4,16 @@
 
 namespace Echo
 {
-	class MapModule : public Module
+	class MiniSlamModule : public Module
 	{
-		ECHO_SINGLETON_CLASS(MapModule, Module)
+		ECHO_SINGLETON_CLASS(MiniSlamModule, Module)
 
 	public:
-		MapModule();
-		virtual ~MapModule();
+		MiniSlamModule();
+		virtual ~MiniSlamModule();
 
 		// instance
-		static MapModule* instance();
+		static MiniSlamModule* instance();
 
 		// register all types of the module
 		virtual void registerTypes() override;

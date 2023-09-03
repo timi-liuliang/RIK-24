@@ -1,13 +1,12 @@
 #include <assert.h>
-#include "map_module.h"
-#include "features/features2d.h"
-#include "matcher/descriptor_matcher.h"
+#include "mini_slam_module.h"
+#include "mini-slam/features/descriptor_matcher.h"
 
 namespace Echo
 {
-	DECLARE_MODULE(MapModule, __FILE__)
+	DECLARE_MODULE(MiniSlamModule, __FILE__)
 
-	MapModule::MapModule()
+	MiniSlamModule::MiniSlamModule()
 	{
 		Features2D ORBFeatures1;
 		ORBFeatures1.detect("D:/test1.jpeg", Features2D::CV_ORB, 250);
@@ -21,21 +20,21 @@ namespace Echo
 		matcher.debugShow();
 	}
 
-	MapModule::~MapModule()
+	MiniSlamModule::~MiniSlamModule()
 	{
 	}
 
-	MapModule* MapModule::instance()
+	MiniSlamModule* MiniSlamModule::instance()
 	{
-		static MapModule* inst = EchoNew(MapModule);
+		static MiniSlamModule* inst = EchoNew(MiniSlamModule);
 		return inst;
 	}
 
-	void MapModule::bindMethods()
+	void MiniSlamModule::bindMethods()
 	{
 	}
 
-	void MapModule::registerTypes()
+	void MiniSlamModule::registerTypes()
 	{
 
 	}

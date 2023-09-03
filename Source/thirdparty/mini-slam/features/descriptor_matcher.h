@@ -1,6 +1,6 @@
 #pragma once
 
-#include "features/features2d.h"
+#include "features2d.h"
 
 namespace Echo
 {

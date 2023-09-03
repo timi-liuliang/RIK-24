@@ -1,6 +1,5 @@
 #include "descriptor_matcher.h"
 #include <opencv2/highgui/highgui.hpp>
-#include "engine/core/math/Math.h"
 
 namespace Echo
 {
@@ -41,7 +40,7 @@ namespace Echo
 		// Store good matches
 		for (size_t i = 0; i < m_matches.size(); i++)
 		{
-			if (m_matches[i].distance <= Math::Max<double>(2 * m_minDistance, 30))
+			if (m_matches[i].distance <= std::max<double>(2 * m_minDistance, 30))
 			{
 				m_matchesGood.emplace_back(m_matches[i]);
 			}

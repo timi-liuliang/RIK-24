@@ -1,7 +1,6 @@
 #include "features2d.h"
 #include "orb.h"
 #include <opencv2/highgui/highgui.hpp>
-#include <engine/core/util/magic_enum.hpp>
 
 namespace Echo
 {
@@ -14,7 +13,7 @@ namespace Echo
 
 	}
 
-	void Features2D::detect(const String& path, Type type, int nfeatures)
+	void Features2D::detect(const std::string& path, Type type, int nfeatures)
 	{
 		m_nfeatrues = nfeatures;
 		m_type = type;
@@ -48,7 +47,7 @@ namespace Echo
 		cv::Mat debugImage;
 		cv::drawKeypoints(m_image, m_keypoints, debugImage, cv::Scalar::all(-1), cv::DrawMatchesFlags::DEFAULT);
 
-		std::string title = std::string(magic_enum::enum_name(m_type)) + " Features";
+		std::string title = "";//std::string(magic_enum::enum_name(m_type)) + " Features";
 		cv::imshow(title.c_str(), debugImage);
 	}
 }

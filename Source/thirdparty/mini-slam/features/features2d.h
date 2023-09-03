@@ -1,6 +1,5 @@
 #pragma once
 
-#include "engine/core/util/StringUtil.h"
 #include <opencv2/core/core.hpp>
 #include <opencv2/features2d/features2d.hpp>
 #include "orb.h"
@@ -23,7 +22,7 @@ namespace Echo
 		~Features2D();
 
 		// Detector key points
-		void detect(const String& path, Type type, int nfeatures = 500);
+		void detect(const std::string& path, Type type, int nfeatures = 500);
 
 		// Debug show
 		void debugShow();
@@ -31,7 +30,7 @@ namespace Echo
 	protected:
 		Type						m_type;
 		cv::Mat						m_image;
-		i32							m_nfeatrues = 0;
+		int							m_nfeatrues = 0;
 		std::vector<cv::KeyPoint>	m_keypoints;
 		ORB::Descriptors			m_descriptorsORB;
 		cv::Mat						m_descriptorsCVORB;
