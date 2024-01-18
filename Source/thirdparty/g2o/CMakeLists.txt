@@ -30,7 +30,7 @@ ENDIF()
 ADD_LIBRARY(${MODULE_NAME} ${ALL_FILES} CMakeLists.txt)
 
 # Set Folder
-SET_TARGET_PROPERTIES(${MODULE_NAME} PROPERTIES FOLDER "game/thirdparty")
+SET_TARGET_PROPERTIES(${MODULE_NAME} PROPERTIES FOLDER "game/thirdparty/external")
 
 # Message
 MESSAGE(STATUS "Configure success!")
