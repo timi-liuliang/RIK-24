@@ -1,6 +1,6 @@
 
 # set module name
-SET(MODULE_NAME ${ECHO_GAME_NAME})
+SET(MODULE_NAME ${ECHO_GAME_NAME}Lib)
 
 MESSAGE( STATUS "Configuring module: ${MODULE_NAME}")
 
